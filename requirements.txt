@@ -1,0 +1,20 @@
+scipy
+scikit_learn
+pandas
+numpy
+rdkit
+descriptastorus
+subword_nmt
+wget
+matplotlib
+lifelines
+prettytable
+tensorboard
+
+#dgllife==0.3.2
+#Requests==2.32.4
+
+#tqdm==4.67.1
+
+#pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+#pip install  dgl -f https://data.dgl.ai/wheels/cu118/repo.html
