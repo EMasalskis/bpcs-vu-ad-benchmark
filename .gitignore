@@ -1,1 +1,8 @@
+# General
 **/__pycache__/
+
+# HNNDTA specific
+HNNDTA/saved_models/
+HNNDTA/tmp_files/
+HNNDTA/runs/
+HNNDTA/result/
