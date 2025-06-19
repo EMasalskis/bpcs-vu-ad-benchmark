@@ -7,6 +7,12 @@ from DeepPurpose.dataset import read_file_training_dataset_drug_target_pairs
 from DeepPurpose.utils import data_process, generate_config, data_process_loader, mpnn_collate_func
 from DeepPurpose.DTI import model_initialize, dgl_collate_func
 
+import warnings
+from rdkit import RDLogger
+
+
+lg = RDLogger.logger()
+lg.setLevel(RDLogger.ERROR)
 
 data_path_S1R = r"tmp_files/drug_S1R_pChEMBL_datas.txt"
 data_path_DRD2 = r"tmp_files/drug_DRD2_pChEMBL_datas.txt"

@@ -3,6 +3,13 @@ import pandas as pd
 from my_utils import predict_DTA
 import os
 
+import warnings
+from rdkit import RDLogger
+
+
+lg = RDLogger.logger()
+lg.setLevel(RDLogger.ERROR)
+
 # candidate FDA
 candidate_file = r"data_input/FDA_candidate_ligands.xlsx"
 candidate_df = pd.read_excel(candidate_file)

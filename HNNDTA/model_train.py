@@ -13,6 +13,12 @@ from DeepPurpose.utils import data_process, generate_config
 from DeepPurpose.DTI import model_initialize
 from my_utils import shuffle_txt_row_
 
+import warnings
+from rdkit import RDLogger
+
+
+lg = RDLogger.logger()
+lg.setLevel(RDLogger.ERROR)
 
 def train(data_path: list, model_candidate_csv_file: str, shuffle_data_file: bool = True, RepeatRunTimes: int = 1,
           pretrain_path: str = None, save_model: bool = True, label_text: str = "", train_val_test: list = None):
