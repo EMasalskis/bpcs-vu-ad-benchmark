@@ -15,7 +15,3 @@ prettytable
 tensorboard
 openpyxl
 pydantic
-
-#dgllife==0.3.2
-#Requests==2.32.4
-#tqdm==4.67.1
