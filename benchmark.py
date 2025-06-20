@@ -1,6 +1,7 @@
 import argparse
 import os
 import sys
+import time
 
 def main():
     parser = argparse.ArgumentParser(
@@ -34,7 +35,13 @@ def main():
         from benchmark_hnndta import run_hnndta_benchmark
 
         output_dir = os.path.join(project_root, 'data_output', 'HNNDTA')
+
+        print("Starting HNNDTA benchmark...")
+        start_time = time.perf_counter()
         run_hnndta_benchmark(input_path, output_dir)
+        end_time = time.perf_counter()
+        duration = end_time - start_time
+        print(f"HNNDTA benchmark completed in {duration:.2f} seconds.")
 
     elif args.model == 'DRML-Ensemble':
         print("DRML-Ensemble benchmark is not implemented.")

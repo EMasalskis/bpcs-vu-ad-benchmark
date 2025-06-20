@@ -13,8 +13,6 @@ lg.setLevel(RDLogger.ERROR)
 
 
 def run_hnndta_benchmark(input_path, output_dir):
-    print("Starting HNNDTA benchmark...")
-
     script_dir = os.path.dirname(os.path.abspath(__file__))
     id_col = 0
     smiles_col = 1
@@ -86,6 +84,4 @@ def run_hnndta_benchmark(input_path, output_dir):
         })
         output_file_target = os.path.join(output_dir, f"top_{top_n}_for_{target_name}.csv")
         df_top_target.to_csv(output_file_target, index=False)
-
-    print("HNNDTA benchmark completed.")
     
