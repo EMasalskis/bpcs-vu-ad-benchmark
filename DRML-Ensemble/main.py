@@ -1,8 +1,6 @@
 import math
 import sys
 
-sys.path.append('/sdb2/20721511/')
-sys.path.append('/home/20721511/')
 import pandas as pd
 import src.dataloader as dataloader
 import argparse

@@ -7,3 +7,11 @@ HNNDTA/tmp_files/
 HNNDTA/runs/
 HNNDTA/result/
 HNNDTA/model_accuracy/
+
+# DRML-Ensemble specific
+DRML-Ensemble/CAllGraph/*
+!DRML-Ensemble/CAllGraph/DGI.csv
+!DRML-Ensemble/CAllGraph/DTI.csv
+!DRML-Ensemble/CAllGraph/DiseaseFeature.csv
+!DRML-Ensemble/CAllGraph/DrugDisI.csv
+!DRML-Ensemble/CAllGraph/DrugFeature.csv
