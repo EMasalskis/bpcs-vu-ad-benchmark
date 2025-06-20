@@ -20,18 +20,14 @@ def run_hnndta_benchmark(input_path, output_dir):
     # Load drug IDs and SMILES
     drug_ids = []
     drug_smiles = []
-    try:
-        with open(input_path, 'r', encoding='utf-8') as f:
-            for ln, line in enumerate(f):
-                parts = line.strip().split('\t')
-                if len(parts) > max(id_col, smiles_col):
-                    drug_ids.append(parts[id_col])
-                    drug_smiles.append(parts[smiles_col])
-                else:
-                    print(f"Warning: Skipping line {ln+1}.")
-    except FileNotFoundError:
-        print(f"Error: Input file not found at {input_path}.")
-        sys.exit(1)
+    with open(input_path, 'r', encoding='utf-8') as f:
+        for ln, line in enumerate(f):
+            parts = line.strip().split(',')
+            if len(parts) > max(id_col, smiles_col):
+                drug_ids.append(parts[id_col])
+                drug_smiles.append(parts[smiles_col])
+            else:
+                print(f"Warning: Skipping line {ln+1}.")
 
     if not drug_smiles:
         print("Error: No SMILES loaded.")

@@ -27,25 +27,29 @@ def main():
         print(f"Error: Input file not found at '{input_path}'")
         sys.exit(1)
 
+    print(f"Starting {args.model} benchmark...")
+    start_time = time.perf_counter()
+
     if args.model == 'HNNDTA':
         hnndta_path = os.path.join(project_root, 'HNNDTA')
         if hnndta_path not in sys.path:
             sys.path.append(hnndta_path)
         
         from benchmark_hnndta import run_hnndta_benchmark
-
         output_dir = os.path.join(project_root, 'data_output', 'HNNDTA')
-
-        print("Starting HNNDTA benchmark...")
-        start_time = time.perf_counter()
         run_hnndta_benchmark(input_path, output_dir)
-        end_time = time.perf_counter()
-        duration = end_time - start_time
-        print(f"HNNDTA benchmark completed in {duration:.2f} seconds.")
 
     elif args.model == 'DRML-Ensemble':
-        print("DRML-Ensemble benchmark is not implemented.")
-        pass
+        model_path = os.path.join(project_root, 'DRML-Ensemble')
+        if model_path not in sys.path:
+            sys.path.append(model_path)
+        
+        from benchmark_drml_ensemble import run_drml_benchmark
+        output_dir = os.path.join(project_root, 'data_output', 'DRML-Ensemble')
+        run_drml_benchmark(input_path, output_dir)
+    
+    end_time = time.perf_counter()
+    print(f"{args.model} benchmark completed in {(end_time - start_time):.2f} seconds.")
 
 if __name__ == "__main__":
     main()
