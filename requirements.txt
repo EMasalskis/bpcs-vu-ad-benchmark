@@ -10,6 +10,7 @@ matplotlib
 lifelines
 prettytable
 tensorboard
+openpyxl
 
 #dgllife==0.3.2
 #Requests==2.32.4
