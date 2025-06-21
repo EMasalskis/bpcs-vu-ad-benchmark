@@ -102,6 +102,36 @@ The primary way to use this repository is through `benchmark.py` script located 
 
     The results will be saved to the corresponding folder in `data_output/`.
 
+### Evaluation
+
+1.  **Prepare the Positive Set File**
+    -   Create a `.csv` file in the `data_input/` directory (e.g., `data_input/positive_set.csv`).
+    -   This file should contain a single column of DrugBank IDs for the drugs known to be associated with the disease of interest, with no header.
+
+2.  **Run the Evaluation Script**
+    From the project root, use the following command:
+
+    ```bash
+    python evaluate_model.py [MODEL_OR_TARGET]
+    ```
+
+    **Examples:**
+
+    -   To run the evaluation for **HNNDTA**:
+        ```bash
+        python evaluate_model.py HNNDTA
+        ```
+
+    -   To run the evaluation for **HNNDTA** target **S1R**:
+        ```bash
+        python evaluate_model.py HNNDTA-S1R
+        ```
+
+    -   To run the evaluation for **DRML-Ensemble**:
+        ```bash
+        python evaluate_model.py DRML-Ensemble
+        ```
+
 ## Credits
 
 This project adapts and builds upon the work of the original authors. The source code for the models was obtained from their respective repositories:
