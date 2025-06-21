@@ -73,8 +73,6 @@ To retrain the models from scratch using their original training data, navigate 
 
 ### Running the Benchmark
 
-The primary way to use this repository is through `benchmark.py` script located in the project root.
-
 1.  **Prepare Your Input File**
     -   Create a `.csv` file inside the `data_input/` directory (e.g., `data_input/my_drug_list.csv`).
     -   The file must have at least two columns with no header:
