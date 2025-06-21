@@ -1,4 +1,4 @@
-# DL Drug Repositioning Benchmark for Alzheimer's Disease
+# Deep Learning Drug Repositioning Benchmark for Alzheimer's Disease
 
 This repository contains the code for the bachelor's thesis "Literature Review and Evaluation of Deep Learning-Based Drug Repositioning Platforms". It provides a framework for running and evaluating two state-of-the-art drug repositioning models, **HNNDTA** and **DRML-Ensemble**, with a focus on Alzheimer's Disease.
 
