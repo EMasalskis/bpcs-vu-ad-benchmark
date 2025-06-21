@@ -55,13 +55,19 @@ def run_hnndta_benchmark(input_path, output_dir):
     # Save all results
     average_scores = np.average(result_scores, axis=0)
     target_names = ["S1R", "DRD2", "BIP"]
-
     predictions_df = pd.DataFrame({'Drug_ID': drug_ids, 'SMILES': drug_smiles})
+
     for i, target_name in enumerate(target_names):
         predictions_df[f'Predicted_DTA_{target_name}'] = average_scores[i, :]
-
+        
+    dta_columns = [f'Predicted_DTA_{name}' for name in target_names]
+    predictions_df['MAX_DTA'] = predictions_df[dta_columns].max(axis=1)
+    
+    output_columns = ['Drug_ID'] + dta_columns + ['MAX_DTA']
+    
+    output_df = predictions_df[output_columns]
     output_file_all = os.path.join(output_dir, "predicted_dta_all_targets.csv")
-    predictions_df.to_csv(output_file_all, index=False)
+    output_df.to_csv(output_file_all, index=False)
 
     # Save top drugs for each target
     top_n = 20
